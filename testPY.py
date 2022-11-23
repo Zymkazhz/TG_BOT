@@ -70,7 +70,7 @@ data = json.loads(a)
 for i in data:
     print(i)
 
-db = PostgresqlDatabase(database='tgbot', user='postgres', password='2bbkbxfE', host='localhost')
+db = PostgresqlDatabase(database='tgbot', user='postgres', password='2bbkbxfE', host='localhost', port='5489')
 
 
 class Token(Model):
@@ -85,8 +85,17 @@ class Token(Model):
         database = db
 
 
-db.connect()
-db.create_tables([Token])
-with db.atomic():
-    for index in range(0, len(data), 50):
-        Token.insert_many(data[index:index+50]).execute()
+if __name__ == '__main__':
+    with db.atomic():
+        for index in range(0, len(data), 50):
+            prepared_data = [
+                {
+                    'name': d['name'],
+                    'symbol': d['symbol'],
+                    'price': d['current_price'],
+                    'market_cap_rank': d['market_cap_rank'],
+                    'total_supply': d['total_supply'],
+                    'image': d['image'],
+                } for d in data[index:index+50]
+            ]
+            Token.insert_many(prepared_data).execute()
