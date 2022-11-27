@@ -22,7 +22,7 @@ kb.add(b1).insert(b2).add(b3).insert(b4)
 HELP_COMMAND = """
 <b>/start</b> - <em>Начать работу с ботом</em>
 <b>/help</b> - <em>Список команд</em>
-<b>/top10</b> - <em>Топ 10 монет на рынке</em>
+<b>/top10token</b> - <em>Топ 10 монет на рынке</em>
 <b>/estimate</b> - <em>Оценить бота</em>
 <b>/description</b> - <em>Описание бота</em>
 """
