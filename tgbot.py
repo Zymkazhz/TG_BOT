@@ -58,7 +58,8 @@ async def help_command(message: types.Message):
 @dp.message_handler(commands=['description'])
 async def description(message: types.Message):
     await message.answer(text='Бот криптоинформер умеет по запросу выдавать <b>актуальную</b>\n'
-                              'информацию о топ 250 монетах, а так выводить топ10 монет по капитализации',
+                              'информацию о топ 250 монетах, а так выводить топ10 монет по капитализации.\n'
+                              'Так же еженедельно бот предлагает пару монет к рассмотрению.',
                          parse_mode='HTML')
 
 
