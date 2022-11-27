@@ -1,22 +1,22 @@
-import random
 from aiogram import Bot, Dispatcher, executor, types
 from config import TOKEN_API, PROXY_URL, PROXY_AUTH
 from models import *
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from datetime import datetime
+import random
 
 bot = Bot(TOKEN_API, proxy=PROXY_URL, proxy_auth=PROXY_AUTH)
 dp = Dispatcher(bot)
 
 kb = ReplyKeyboardMarkup(
-    resize_keyboard=True)  # Создаем обьект клавиатуры, resize_keyboard True улучшает видимость по размеру под интерфейс пользователя
+    resize_keyboard=True)
 b1 = KeyboardButton('/description')
 b2 = KeyboardButton('/top10token')
 b3 = KeyboardButton('/estimate')
 b4 = KeyboardButton(text='/help')
 
-kb.add(b1).insert(b2).add(b3).insert(b4)  # Добавляем в обьект кнопки
+kb.add(b1).insert(b2).add(b3).insert(b4)
 
 HELP_COMMAND = """
 <b>/start</b> - <em>Начать работу с ботом</em>
