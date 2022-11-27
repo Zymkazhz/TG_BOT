@@ -1,5 +1,5 @@
-import json
 from peewee import *
+import json
 import requests
 import schedule
 

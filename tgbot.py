@@ -3,8 +3,9 @@ from config import TOKEN_API, PROXY_URL, PROXY_AUTH
 from models import *
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from datetime import datetime
 import random
+from datetime import datetime
+
 
 bot = Bot(TOKEN_API, proxy=PROXY_URL, proxy_auth=PROXY_AUTH)
 dp = Dispatcher(bot)
