@@ -110,7 +110,7 @@ async def start_command(message: types.Message):
 @dp.message_handler(commands=['top10token'])
 async def top10token(message: types.Message):
     with db:
-        query = Token.select().where(Token.market_cap_rank < 10)
+        query = Token.select().where(Token.market_cap_rank < 11)
         list_top10_token = []
         answer_top10_token = []
         for i in query:
