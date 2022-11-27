@@ -24,6 +24,7 @@ HELP_COMMAND = """
 <b>/help</b> - <em>Список команд</em>
 <b>/top10</b> - <em>Топ 10 монет на рынке</em>
 <b>/estimate</b> - <em>Оценить бота</em>
+<b>/description</b> - <em>Описание бота</em>
 """
 
 
