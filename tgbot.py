@@ -6,7 +6,6 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import random
 from datetime import datetime
 
-
 bot = Bot(TOKEN_API, proxy=PROXY_URL, proxy_auth=PROXY_AUTH)
 dp = Dispatcher(bot)
 
@@ -99,8 +98,9 @@ async def start_command(message: types.Message):
             answer = ''.join(answer)
             for i in query_person:
                 await bot.send_message(chat_id=i.id_name, text=f'Рекомендую рассмотреть монеты к покупке:\n'
-                                                           f'{answer}'
-                                                           f'Не финансовая рекомендация😉')
+                                                               f'{answer}'
+                                                               f'Не финансовая рекомендация😉')
+
     scheduler = AsyncIOScheduler(timezone='Europe/Moscow')
     scheduler.add_job(test, trigger='cron', day_of_week=0, hour=11,
                       start_date=datetime.now(), kwargs={'bot': bot})
@@ -152,4 +152,3 @@ async def token_info(message: types.Message):
 
 if __name__ == '__main__':
     executor.start_polling(dp, on_startup=on_startup)
-
