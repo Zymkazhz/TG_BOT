@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  web:
+    build: ./tg_bot app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./tg_bot app:/tgbot.py
+  mongodb:
+    image: postgres
