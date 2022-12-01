@@ -3,8 +3,15 @@ import json
 import requests
 import schedule
 
+import config
 
-db = PostgresqlDatabase(database='tgbot', user='postgres', password='2bbkbxfE', host='localhost')
+db = PostgresqlDatabase(
+    database=config.db_name,
+    user=config.user,
+    password=config.password,
+    host=config.host,
+    port=config.port,
+)
 
 
 class Token(Model):
